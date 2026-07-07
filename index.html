@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camille Blanco - Psicologia</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #fcfbfe;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 10%;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #6a5acd;
+            font-weight: bold;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 10%;
+            background-color: #f3effa;
+        }
+        .hero-text {
+            flex: 1;
+            padding-right: 30px;
+        }
+        .hero-text h1 {
+            font-size: 2.5rem;
+            color: #4a3b8c;
+        }
+        .hero-img img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .sobre-mim {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 10%;
+            background: #fff;
+        }
+        .sobre-img img {
+            max-width: 380px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .sobre-text {
+            flex: 1;
+            padding-left: 50px;
+        }
+        .sobre-text h2 {
+            font-size: 2rem;
+            color: #4a3b8c;
+        }
+        @media (max-width: 768px) {
+            header, .hero, .sobre-mim {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text, .sobre-text {
+                padding: 0;
+                margin-bottom: 20px;
+            }
+            .sobre-text {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO / LOGO -->
+    <header>
+        <div class="logo">
+            <img src="logo_camille.jpg" alt="Camille M. Blanco - Psicologia">
+        </div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre Mim</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO HERO (FOTO NA GRAMA) -->
+    <section id="inicio" class="hero">
+        <div class="hero-text">
+            <h1>Cuidado e acolhimento para a sua saúde mental</h1>
+            <p>Um espaço seguro para compreender suas emoções, desenvolver o autoconhecimento e encontrar o equilíbrio que você busca.</p>
+        </div>
+        <div class="hero-img">
+            <img src="foto_hero_grama.jpg" alt="Camille Blanco">
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE MIM (FOTO FORMADA) -->
+    <section id="sobre" class="sobre-mim">
+        <div class="sobre-img">
+            <img src="foto_sobre_formada.jpg" alt="Camille Blanco Formada">
+        </div>
+        <div class="sobre-text">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Sou a Camille Blanco. Minha trajetória na psicologia é guiada pelo compromisso de oferecer uma escuta ética, atenta e humanizada.</p>
+            <p>Acredito na potência do processo terapêutico como ferramenta de transformação e autonomia, auxiliando cada paciente a trilhar caminhos mais leves e conscientes.</p>
+        </div>
+    </section>
+
+</body>
+</html>
