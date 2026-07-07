@@ -1,128 +1,337 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camille Blanco - Psicologia</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #fcfbfe;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 10%;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .logo img {
-            height: 70px;
-            width: auto;
-        }
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #6a5acd;
-            font-weight: bold;
-        }
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px 10%;
-            background-color: #f3effa;
-        }
-        .hero-text {
-            flex: 1;
-            padding-right: 30px;
-        }
-        .hero-text h1 {
-            font-size: 2.5rem;
-            color: #4a3b8c;
-        }
-        .hero-img img {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .sobre-mim {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 60px 10%;
-            background: #fff;
-        }
-        .sobre-img img {
-            max-width: 380px;
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .sobre-text {
-            flex: 1;
-            padding-left: 50px;
-        }
-        .sobre-text h2 {
-            font-size: 2rem;
-            color: #4a3b8c;
-        }
-        @media (max-width: 768px) {
-            header, .hero, .sobre-mim {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-text, .sobre-text {
-                padding: 0;
-                margin-bottom: 20px;
-            }
-            .sobre-text {
-                order: -1;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camille Blanco | Psicóloga CRP 05/87234 — Terapia Cognitivo Comportamental</title>
+<meta name="description" content="Camille Blanco, psicóloga especialista em TCC no Rio de Janeiro. Um espaço seguro para falar, sentir e se compreender no seu tempo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lilac-bg:#EAE0F8;
+    --lilac-deep:#B69ADB;
+    --lilac-line:#c9b3e6;
+    --cream:#F3EFE6;
+    --gray:#A8A8A8;
+    --ink:#1A1A1A;
+    --white:#FFFDF9;
+    --serif:'Cormorant Garamond', serif;
+    --sans:'Poppins', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans); color:var(--ink); background:var(--lilac-bg); line-height:1.6; overflow-x:hidden;}
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  section{scroll-margin-top:84px;}
+  .container{max-width:1140px; margin:0 auto; padding:0 6%;}
+  h1,h2,h3{font-family:var(--serif); font-weight:600; line-height:1.15;}
+  .eyebrow{font-family:var(--sans); font-size:0.78rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--lilac-deep); font-weight:600;}
+
+  header{
+    position:fixed; top:0; left:0; width:100%; z-index:1000;
+    background:rgba(255,253,249,0.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(182,154,219,0.35);
+  }
+  .nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 6%;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-size:1.3rem; font-weight:600;}
+  .logo img{height:44px; width:44px; border-radius:50%; object-fit:cover;}
+  nav.menu{display:flex; align-items:center; gap:34px;}
+  nav.menu a{font-size:0.92rem; text-decoration:none; color:var(--ink); position:relative; padding:4px 0;}
+  nav.menu a:not(.cta)::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1.5px; background:var(--lilac-deep); transition:width .25s ease;
+  }
+  nav.menu a:not(.cta):hover::after{width:100%;}
+  .cta{
+    background:var(--lilac-deep); color:#fff !important; padding:10px 22px; border-radius:30px;
+    font-weight:600; font-size:0.88rem; text-decoration:none; white-space:nowrap;
+    box-shadow:0 4px 14px rgba(182,154,219,0.45); transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cta:hover{transform:translateY(-2px); box-shadow:0 6px 18px rgba(182,154,219,0.6);}
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; z-index:1100; padding:6px;}
+  .burger span{width:26px; height:2px; background:var(--ink); transition:.3s;}
+  .burger.open span:nth-child(1){transform:rotate(45deg) translate(6px,6px);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
+
+  @media (max-width:860px){
+    nav.menu{
+      position:fixed; top:0; right:0; height:100vh; width:min(78%,320px);
+      background:var(--white); flex-direction:column; align-items:flex-start; justify-content:center;
+      gap:28px; padding:40px; transform:translateX(100%); transition:transform .35s ease;
+      box-shadow:-8px 0 30px rgba(0,0,0,0.08);
+    }
+    nav.menu.open{transform:translateX(0);}
+    nav.menu a{font-size:1.05rem;}
+    .burger{display:flex;}
+  }
+
+  .hero{padding:150px 6% 90px; display:flex; align-items:center; gap:60px; background:var(--lilac-bg);}
+  .hero-text{flex:1; min-width:280px;}
+  .hero-text .eyebrow{margin-bottom:14px; display:block;}
+  .hero-text h1{font-size:clamp(2.2rem,4.4vw,3.4rem); color:var(--ink); margin-bottom:20px;}
+  .circled{position:relative; display:inline-block; color:var(--lilac-deep); font-style:italic;}
+  .circled svg{position:absolute; left:-8%; top:-22%; width:116%; height:150%; pointer-events:none;}
+  .hero-text p{font-size:1.08rem; color:#4a4a4a; max-width:460px; margin-bottom:30px;}
+  .hero-img{flex:1; min-width:260px; display:flex; justify-content:center;}
+  .hero-img .frame{position:relative; max-width:400px; width:100%;}
+  .hero-img img{border-radius:20px 20px 100px 20px; box-shadow:0 20px 50px rgba(74,59,140,0.22);}
+  .hero-img .dot{position:absolute; width:120px; height:120px; border-radius:50%; background:var(--cream); z-index:-1;}
+  .hero-img .dot.d1{top:-20px; left:-20px;}
+  .hero-img .dot.d2{bottom:-24px; right:-18px; background:var(--gray); opacity:.35;}
+
+  @media (max-width:860px){
+    .hero{flex-direction:column; text-align:center; padding:130px 6% 60px;}
+    .hero-text p{margin-left:auto; margin-right:auto;}
+  }
+
+  .section-head{text-align:center; max-width:640px; margin:0 auto 50px;}
+  .section-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem); margin-top:10px;}
+  .band-cream{background:var(--cream);}
+  .band-white{background:var(--white);}
+  .pad{padding:90px 0;}
+
+  .cards-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .card{
+    padding:34px 28px; border-radius:18px; background:var(--white);
+    border:1px solid rgba(168,168,168,0.25); transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:nth-child(even){background:var(--cream);}
+  .card:hover{transform:translateY(-6px); box-shadow:0 16px 34px rgba(74,59,140,0.14);}
+  .card .ic{font-size:1.6rem; margin-bottom:14px; display:inline-block;}
+  .card h3{font-size:1.18rem; margin-bottom:8px; font-weight:600; font-family:var(--sans);}
+  .card p{font-size:0.94rem; color:#555;}
+  @media (max-width:860px){ .cards-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .cards-grid{grid-template-columns:1fr;} }
+
+  .sobre{display:flex; align-items:center; gap:60px;}
+  .sobre-img{flex:1; min-width:260px;}
+  .sobre-img .frame{position:relative; max-width:360px; margin:0 auto;}
+  .sobre-img img{border-radius:100px 20px 20px 20px; box-shadow:0 20px 50px rgba(74,59,140,0.18);}
+  .sobre-text{flex:1.2; min-width:280px;}
+  .sobre-text .tag{display:inline-block; background:var(--lilac-bg); color:var(--lilac-deep); font-size:0.82rem; font-weight:600; padding:5px 14px; border-radius:20px; margin-bottom:10px; margin-right:6px;}
+  .sobre-text h2{font-size:clamp(1.8rem,3.2vw,2.4rem); margin:14px 0 18px;}
+  .sobre-text p{color:#444; margin-bottom:16px; font-size:1rem;}
+  blockquote{
+    font-family:var(--serif); font-style:italic; font-size:1.25rem; color:var(--lilac-deep);
+    border-left:3px solid var(--lilac-deep); padding-left:20px; margin:26px 0;
+  }
+  .alem-box{background:var(--cream); border-radius:16px; padding:24px 28px; margin-top:24px;}
+  .alem-box h4{font-family:var(--serif); font-size:1.15rem; margin-bottom:10px;}
+  .alem-box p{font-size:0.94rem; color:#4a4a4a; margin-bottom:0;}
+  .humana{
+    text-align:center; margin-top:60px; padding:40px; background:var(--lilac-deep); border-radius:20px; color:#fff;
+  }
+  .humana h3{font-family:var(--serif); font-size:1.8rem; margin-bottom:12px;}
+  .humana p{max-width:600px; margin:0 auto; opacity:0.95;}
+  @media (max-width:860px){ .sobre{flex-direction:column; text-align:center;} blockquote{text-align:left;} }
+
+  .dif-list{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .dif-item{display:flex; gap:16px; background:var(--white); padding:24px; border-radius:14px; align-items:flex-start;}
+  .dif-item:nth-child(odd){background:var(--cream);}
+  .dif-item .num{font-family:var(--serif); font-size:1.5rem; color:var(--lilac-deep); font-weight:600;}
+  .dif-item h3{font-size:1.05rem; margin-bottom:6px;}
+  .dif-item p{font-size:0.92rem; color:#555;}
+  @media (max-width:700px){ .dif-list{grid-template-columns:1fr;} }
+
+  .reviews{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .review{background:var(--white); padding:28px; border-radius:16px; border:1px solid rgba(168,168,168,0.25);}
+  .stars{color:var(--lilac-deep); letter-spacing:3px; margin-bottom:12px; font-size:1.1rem;}
+  .review p{font-size:0.95rem; color:#444; margin-bottom:16px;}
+  .review .who{font-weight:600; font-size:0.88rem; color:var(--ink);}
+  @media (max-width:860px){ .reviews{grid-template-columns:1fr;} }
+
+  .contato{text-align:center; max-width:680px; margin:0 auto;}
+  .contato p{font-size:1.08rem; color:#444; margin-bottom:30px;}
+  .socials{margin-top:26px; display:flex; justify-content:center; gap:20px; font-size:0.95rem;}
+  .socials a{text-decoration:none; color:var(--lilac-deep); font-weight:600;}
+
+  footer{background:#241c38; color:#e7e0f5; padding:50px 6% 26px;}
+  .footer-top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; padding-bottom:30px; border-bottom:1px solid rgba(255,255,255,0.12);}
+  .footer-logo{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-size:1.15rem;}
+  .footer-logo img{height:36px; width:36px; border-radius:50%; object-fit:cover;}
+  .footer-links{display:flex; gap:26px; flex-wrap:wrap; font-size:0.9rem;}
+  .footer-links a{text-decoration:none; color:#cabfe6;}
+  .footer-bottom{padding-top:22px; font-size:0.82rem; color:#a89bc9; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+
+  .fade-in{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .fade-in.visible{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
+  }
+</style>
 </head>
 <body>
 
-    <!-- CABEÇALHO / LOGO -->
-    <header>
-        <div class="logo">
-            <img src="logo_camille.jpg" alt="Camille M. Blanco - Psicologia">
-        </div>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre Mim</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
+<header>
+  <div class="nav-wrap">
+    <a href="#inicio" class="logo">
+      <img src="logo_camille.jpg" alt="Logo Camille Blanco Psicologia">
+      Camille Blanco
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#inicio">Home</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#ajuda">Como posso te ajudar</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+      <a href="https://wa.me/5521999999999" target="_blank" class="cta">Fale comigo</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-    <!-- SEÇÃO HERO (FOTO NA GRAMA) -->
-    <section id="inicio" class="hero">
-        <div class="hero-text">
-            <h1>Cuidado e acolhimento para a sua saúde mental</h1>
-            <p>Um espaço seguro para compreender suas emoções, desenvolver o autoconhecimento e encontrar o equilíbrio que você busca.</p>
-        </div>
-        <div class="hero-img">
-            <img src="foto_hero_grama.jpg" alt="Camille Blanco">
-        </div>
-    </section>
+<section id="inicio" class="hero">
+  <div class="hero-text fade-in">
+    <span class="eyebrow">Psicologia · TCC · Rio de Janeiro</span>
+    <h1>Olá! Eu sou a
+      <span class="circled">Camille
+        <svg viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 30C8 12 40 4 100 4C160 4 192 12 192 30C192 48 160 56 100 56C40 56 8 48 8 30Z" stroke="#B69ADB" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </h1>
+    <p>Um espaço seguro para falar, sentir e se compreender no seu tempo. 🌷</p>
+    <a href="https://wa.me/5521999999999" target="_blank" class="cta">Fale comigo</a>
+  </div>
+  <div class="hero-img fade-in">
+    <div class="frame">
+      <div class="dot d1"></div>
+      <div class="dot d2"></div>
+      <img src="foto_hero_grama.jpg" alt="Camille Blanco sorrindo ao ar livre">
+    </div>
+  </div>
+</section>
 
-    <!-- SEÇÃO SOBRE MIM (FOTO FORMADA) -->
-    <section id="sobre" class="sobre-mim">
-        <div class="sobre-img">
-            <img src="foto_sobre_formada.jpg" alt="Camille Blanco Formada">
+<section id="ajuda" class="band-white pad">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="eyebrow">Camille Blanco — CRP 05/87234</span>
+      <h2>Como posso te ajudar?</h2>
+    </div>
+    <div class="cards-grid fade-in">
+      <div class="card"><span class="ic">🌊</span><h3>Ansiedade e preocupação excessiva</h3><p>Para quando a mente não desacelera e o corpo sente o peso disso.</p></div>
+      <div class="card"><span class="ic">🌧️</span><h3>Desânimo, tristeza</h3><p>Um espaço para acolher o que dói, sem pressa e sem julgamento.</p></div>
+      <div class="card"><span class="ic">🌱</span><h3>Autoconhecimento</h3><p>Entender seus padrões para escolher com mais liberdade.</p></div>
+      <div class="card"><span class="ic">🤍</span><h3>Relacionamentos e limites</h3><p>Aprender a se colocar com clareza e respeito, nos vínculos que importam.</p></div>
+      <div class="card"><span class="ic">🪞</span><h3>Autoestima e autocrítica</h3><p>Construir uma relação mais gentil com quem você é.</p></div>
+      <div class="card"><span class="ic">🕊️</span><h3>Regulação emocional</h3><p>Ferramentas práticas para lidar com as emoções no dia a dia.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="band-white pad">
+  <div class="container">
+    <div class="sobre fade-in">
+      <div class="sobre-img">
+        <div class="frame">
+          <img src="foto_sobre_formada.jpg" alt="Camille Blanco formada em Psicologia">
         </div>
-        <div class="sobre-text">
-            <h2>Sobre Mim</h2>
-            <p>Olá! Sou a Camille Blanco. Minha trajetória na psicologia é guiada pelo compromisso de oferecer uma escuta ética, atenta e humanizada.</p>
-            <p>Acredito na potência do processo terapêutico como ferramenta de transformação e autonomia, auxiliando cada paciente a trilhar caminhos mais leves e conscientes.</p>
+      </div>
+      <div class="sobre-text">
+        <span class="tag">Psicologia</span><span class="tag">TCC</span>
+        <h2>Sobre a Camille</h2>
+        <p>Formada em Psicologia pela Universidade Estácio de Sá, sou especialista em Terapia Cognitivo Comportamental (TCC).</p>
+        <p>Atuei 2 anos como monitora na clínica-escola (SEP) da universidade, com experiência prática em estágio supervisionado no atendimento clínico e na condução da rotina clínica.</p>
+        <p>Minha prática clínica é guiada pelo equilíbrio entre técnica e humanidade. Acredito que cada processo terapêutico deve ser conduzido com ética, acolhimento e sensibilidade.</p>
+        <blockquote>"Conheça todas as teorias, domine todas as técnicas, mas ao tocar uma alma humana, seja apenas outra alma humana." — Carl Jung</blockquote>
+        <div class="alem-box">
+          <h4>Além da Camille psi... 🌷</h4>
+          <p>Sou apaixonada por artes e criatividade, tenho uma conexão profunda com animais, carinho por música brasileira e rock nacional. Amo natureza, verão, viagens e os pequenos momentos de paz.</p>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="humana fade-in">
+      <h3>Aqui, eu sou HUMANA.</h3>
+      <p>Acredito que a conexão é o ponto de partida de qualquer processo terapêutico — por isso, antes da técnica, existe escuta de verdade.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band-cream pad">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="eyebrow">Diferenciais</span>
+      <h2>Como funciona o atendimento</h2>
+    </div>
+    <div class="dif-list fade-in">
+      <div class="dif-item"><span class="num">🤍</span><div><h3>Conexão real</h3><p>Informalidade e proximidade, sem distanciamento clínico frio.</p></div></div>
+      <div class="dif-item"><span class="num">💬</span><div><h3>Conversa clara</h3><p>Explico o processo e as técnicas usadas antes de cada etapa.</p></div></div>
+      <div class="dif-item"><span class="num">📦</span><div><h3>Materiais de apoio</h3><p>Kits terapêuticos personalizados — Kit Âncora, Kit SOS, cartas e cartões de respiração e mindfulness.</p></div></div>
+      <div class="dif-item"><span class="num">📝</span><div><h3>Acompanhamento contínuo</h3><p>Reviso anotações e reflito sobre o seu processo entre as sessões.</p></div></div>
+      <div class="dif-item"><span class="num">🌱</span><div><h3>Participação ativa</h3><p>Nada aqui é feito "em você" — tudo é construído com você.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="depoimentos" class="band-white pad">
+  <div class="container">
+    <div class="section-head fade-in">
+      <span class="eyebrow">Depoimentos</span>
+      <h2>Quem já passou por aqui</h2>
+    </div>
+    <div class="reviews fade-in">
+      <div class="review"><div class="stars">★★★★★</div><p>"Me senti acolhida desde a primeira sessão. Um espaço leve para falar do que dói."</p><div class="who">— M. S.</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"A Camille tem uma escuta muito atenta e humana. Recomendo de olhos fechados."</p><div class="who">— A. R.</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"Aprendi a lidar com a ansiedade de um jeito prático e gentil comigo mesma."</p><div class="who">— J. F.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="band-cream pad">
+  <div class="container contato fade-in">
+    <span class="eyebrow">Vamos conversar?</span>
+    <h2 style="margin:14px 0 18px;">Contato</h2>
+    <p>Espero construir esse espaço como um lugar leve, acolhedor e verdadeiro. Onde possamos compartilhar reflexões, cuidado, afeto e saúde mental de forma humana e sem julgamento. 🤍</p>
+    <a href="https://wa.me/5521999999999" target="_blank" class="cta">Fale comigo no WhatsApp</a>
+    <div class="socials">
+      <a href="https://instagram.com/psi_camille.blanco" target="_blank">@psi_camille.blanco</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <a href="#inicio" class="footer-logo">
+      <img src="logo_camille.jpg" alt="Logo Camille Blanco">
+      Camille Blanco
+    </a>
+    <div class="footer-links">
+      <a href="#contato">Condições e suporte</a>
+      <a href="#contato">Política de Privacidade</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>CRP 05/87234</span>
+    <span>&copy; <span id="year"></span> Camille Blanco Psicologia. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  burger.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('nav.menu a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.15});
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
